@@ -1,0 +1,40 @@
+.banner-block {
+    padding: 15px;
+    border-radius: 8px;
+    margin: 10px 0;
+    color: #fff;
+    display: flex;
+    flex-direction: column;
+    gap: 8px;
+}
+
+.banner-block select {
+    width: 120px;
+    padding: 5px;
+    border-radius: 4px;
+    border: none;
+    outline: none;
+}
+
+.banner-text {
+    min-height: 30px;
+    font-size: 16px;
+    outline: none;
+}
+
+.banner-info {
+    background-color: #007bff;
+}
+
+.banner-warning {
+    background-color: #ffc107;
+    color: #222;
+}
+
+.banner-success {
+    background-color: #28a745;
+}
+
+.banner-danger {
+    background-color: #dc3545;
+}
