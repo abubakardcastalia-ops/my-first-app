@@ -38,3 +38,31 @@
 .banner-danger {
     background-color: #dc3545;
 }
+
+
+/* Styles for Nested List Block  */
+.nested-list-block {
+    padding: 10px;
+    margin: 10px 0;
+}
+
+.nested-list {
+    list-style-type: disc;
+    padding-left: 25px;
+}
+
+.nested-list-item {
+    margin-bottom: 6px;
+    min-height: 20px;
+    outline: none;
+    cursor: text;
+}
+
+.nested-list-add {
+    background: none;
+    color: #007bff;
+    border: none;
+    cursor: pointer;
+    font-weight: bold;
+    margin-top: 5px;
+}

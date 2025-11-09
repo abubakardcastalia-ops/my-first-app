@@ -7,13 +7,17 @@ import Table from "@editorjs/table";
 import Marker from "@editorjs/marker";
 import ImageTool from "@editorjs/image";
 import Code from "@editorjs/code";
-import NestedList from "@editorjs/nested-list";
+import InlineCode from "@editorjs/inline-code";
+import Underline from "@editorjs/underline";
 import Toggle from "editorjs-toggle-block";
 import Button from "editorjs-button";
-// import Banner from "editorjs-banner-block";
 // import NewPage from "editorjs-new-page";
 import "./App.css";
 import CustomBanner from "./CustomBanner";
+import CustomNestedList from "./CustomNestedList";
+// import TextColorPlugin from "editorjs-text-color-plugin";
+// const TextColorPlugin = require('editorjs-text-color-plugin');
+
 
 
 const App = () => {
@@ -39,15 +43,16 @@ const App = () => {
 
           list: {
             class: List,
-            inlineToolbar: true,
+            inlineToolbar: ['bold', 'italic', 'underline', 'marker'],
+            config: {
+              defaultStyle: 'unordered'  // 'unordered' = bullet list, 'ordered' = numbered list
+            }
           },
 
           nestedList: {
-            class: NestedList,
+            class: CustomNestedList,
             inlineToolbar: true,
-            config: {
-              defaultStyle: "unordered",
-            },
+
           },
 
           quote: {
@@ -68,10 +73,12 @@ const App = () => {
             },
           },
 
-          marker: {
-            class: Marker,
-            shortcut: "CMD+SHIFT+M",
-          },
+          // marker: {
+          //   class: Marker,
+          //   shortcut: "CMD+SHIFT+M",
+          // },
+          inlineCode: InlineCode,
+          underline: Underline,
 
           image: {
             class: ImageTool,
@@ -93,6 +100,24 @@ const App = () => {
           code: {
             class: Code,
             inlineToolbar: true,
+          },
+
+          // Color: {
+          //   class: TextColorPlugin,
+          //   config: {
+          //     colorCollection: ['#EC7878', '#9C27B0', '#673AB7', '#3F51B5', '#0070FF', '#03A9F4', '#00BCD4', '#4CAF50', '#8BC34A', '#CDDC39', '#FFF'],
+          //     defaultColor: '#FF1300',
+          //     type: 'text', // 'text' or 'marker'
+          //     customPicker: true
+          //   },
+          // },
+          marker: {
+            class: Marker,
+            inlineToolbar: true,
+            config: {
+              type: 'marker',
+              customPicker: true
+            }
           },
 
           toggle: {
