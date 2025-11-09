@@ -107,10 +107,10 @@ const App = () => {
             },
           },
 
-          // marker: {
-          //   class: Marker,
-          //   shortcut: "CMD+SHIFT+M",
-          // },
+          marker: {
+            class: Marker,
+            shortcut: "CMD+SHIFT+M",
+          },
 
           inlineCode: InlineCode,
           underline: Underline,

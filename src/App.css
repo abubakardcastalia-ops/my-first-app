@@ -66,3 +66,77 @@
     font-weight: bold;
     margin-top: 5px;
 }
+
+
+/* testing css */
+
+/* === Overall Editor Container === */
+.ce-block {
+    margin-bottom: 15px;
+    /* background-color: #007bff; */
+}
+
+.ce-toolbar {
+    font-size: 15px;
+    /* default text inside toolbar */
+}
+
+/* === Increase toolbar button size === */
+/* .ce-toolbar__plus,
+.ce-toolbar__settings-btn, */
+.ce-toolbar__content {
+    transform: scale(1);
+    /* Increase toolbar icon size */
+}
+
+/* === Adjust the inline toolbar (appears when you select text) === */
+.ce-inline-toolbar {
+    transform: scale(2);
+    /* Make inline toolbar 20% larger */
+    /* padding: 6px 10px; */
+    border-radius: 8px;
+}
+
+.ce-toolbar {
+    transform: scale(1);
+    /* Make inline toolbar 20% larger */
+    /* padding: 6px 10px; */
+    border-radius: 8px;
+}
+
+/* === Adjust toolbar icons spacing === */
+.ce-toolbar__actions {
+    gap: 0px;
+}
+
+/* === Optional: Add background and shadow for toolbar === */
+.ce-toolbar__content,
+.ce-inline-toolbar {
+    background-color: #ffffff !important;
+    box-shadow: 0px 4px 10px rgba(0, 0, 0, 0.1);
+}
+
+/* === Style the main editor content === */
+.ce-block__content {
+    font-size: 18px;
+    line-height: 1.6;
+    color: #222;
+}
+
+/* === Placeholder text style === */
+.ce-paragraph[data-placeholder]:empty::before {
+    color: #aaa;
+    font-style: italic;
+}
+
+/* === Header Block style === */
+.ce-header {
+    font-weight: bold;
+}
+
+/* === Make toolbar icons slightly bigger visually === */
+.ce-toolbar__plus svg,
+.ce-toolbar__settings-btn svg {
+    width: 24px;
+    height: 24px;
+}
