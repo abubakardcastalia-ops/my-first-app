@@ -15,8 +15,9 @@ import Button from "editorjs-button";
 import "./App.css";
 import CustomBanner from "./CustomBanner";
 import CustomNestedList from "./CustomNestedList";
-// import TextColorPlugin from "editorjs-text-color-plugin";
-// const TextColorPlugin = require('editorjs-text-color-plugin');
+import TextColorPlugin from "./components/TextColorPlugin";
+
+
 
 
 
@@ -43,11 +44,44 @@ const App = () => {
 
           list: {
             class: List,
-            inlineToolbar: ['bold', 'italic', 'underline', 'marker'],
+            inlineToolbar: ['bold', 'italic', 'underline', 'marker', 'link',],
             config: {
               defaultStyle: 'unordered'  // 'unordered' = bullet list, 'ordered' = numbered list
             }
           },
+
+          // color: {
+          //   class: TextColorPlugin,
+          //   inlineToolbar: true,
+          // },
+
+          textColor: {
+            class: TextColorPlugin,
+            inlineToolbar: true,
+            config: {
+              colorCollections: [
+                "#FF5733", "#FFBD33", "#75FF33",
+                "#33FFBD", "#3375FF", "#8E33FF",
+                "#FF33A8", "#000000", "#FFFFFF",
+              ],
+              defaultColor: "#FFBF00",
+              type: "text", // or 'marker' for background color
+            },
+          },
+
+          // marker: {
+          //   class: TextColorPlugin,
+          //   inlineToolbar: true,
+          //   config: {
+          //     colorCollections: [
+          //       "#FFFF00", "#FF9A00", "#FF5733",
+          //       "#FF33A8", "#33FF57", "#33C4FF",
+          //       "#8E33FF", "#000000",
+          //     ],
+          //     defaultColor: "#FFFF00",
+          //     type: "marker", // <-- important for highlight color
+          //   },
+          // },
 
           nestedList: {
             class: CustomNestedList,
@@ -77,8 +111,10 @@ const App = () => {
           //   class: Marker,
           //   shortcut: "CMD+SHIFT+M",
           // },
+
           inlineCode: InlineCode,
           underline: Underline,
+
 
           image: {
             class: ImageTool,
@@ -102,23 +138,14 @@ const App = () => {
             inlineToolbar: true,
           },
 
-          // Color: {
-          //   class: TextColorPlugin,
+          // marker: {
+          //   class: Marker,
+          //   inlineToolbar: true,
           //   config: {
-          //     colorCollection: ['#EC7878', '#9C27B0', '#673AB7', '#3F51B5', '#0070FF', '#03A9F4', '#00BCD4', '#4CAF50', '#8BC34A', '#CDDC39', '#FFF'],
-          //     defaultColor: '#FF1300',
-          //     type: 'text', // 'text' or 'marker'
+          //     type: 'marker',
           //     customPicker: true
-          //   },
+          //   }
           // },
-          marker: {
-            class: Marker,
-            inlineToolbar: true,
-            config: {
-              type: 'marker',
-              customPicker: true
-            }
-          },
 
           toggle: {
             class: Toggle,
@@ -156,10 +183,12 @@ const App = () => {
         placeholder="Title..."
         style={{
           width: "100%",
-          fontSize: "28px",
+          fontSize: "30px",
           fontWeight: "bold",
           marginBottom: "20px",
           padding: "10px",
+          // paddingLeft: "30px",
+          // border: 'none',
         }}
       />
       <div
@@ -169,6 +198,7 @@ const App = () => {
           padding: "10px",
           width: "100%",
           height: "800px",
+          // border: 'none',
         }}
       ></div>
     </div>
